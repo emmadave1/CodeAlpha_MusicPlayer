@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern, responsive music player built with HTML, CSS, and JavaScript.">
+    <title>Alamzy — Music Player</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+<body>
+    <main class="app">
+        <header class="top-bar">
+            <a href="#" class="brand">
+                <i class="fa-solid fa-wave-square"></i>
+                <span>Music Player</span>
+            </a>
+
+            <button class="icon-button" id="themeButton" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <section class="player-layout">
+            <div class="player-card">
+                <div class="section-heading">
+                    <span class="eyebrow">NOW PLAYING</span>
+                    <span class="live-indicator">
+                        <span></span> MUSIC PLAYER
+                    </span>
+                </div>
+
+                <div class="album-art" id="albumArt">
+                    <img id="coverImage" src="assets/images/cover1.jpg" alt="Album artwork">
+                    <div class="art-overlay">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                </div>
+
+                <div class="track-info">
+                    <div>
+                        <h1 id="trackTitle">First Light</h1>
+                        <p id="trackArtist">The Music Player Project</p>
+                    </div>
+
+                    <button
+                        class="icon-button favorite-button"
+                        id="favoriteButton"
+                        aria-label="Add song to favorites"
+                        title="Add to favorites"
+                    >
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+
+                <div class="progress-section">
+                    <input
+                        type="range"
+                        id="progressBar"
+                        min="0"
+                        max="100"
+                        value="0"
+                        step="0.1"
+                        aria-label="Track progress"
+                    >
+
+                    <div class="time-labels">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button
+                        class="control-button secondary"
+                        id="shuffleButton"
+                        aria-label="Shuffle"
+                        title="Shuffle"
+                    >
+                        <i class="fa-solid fa-shuffle"></i>
+                    </button>
+
+                    <button
+                        class="control-button"
+                        id="previousButton"
+                        aria-label="Previous track"
+                        title="Previous track"
+                    >
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+
+                    <button
+                        class="play-button"
+                        id="playButton"
+                        aria-label="Play"
+                        title="Play"
+                    >
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <button
+                        class="control-button"
+                        id="nextButton"
+                        aria-label="Next track"
+                        title="Next track"
+                    >
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+
+                    <button
+                        class="control-button secondary"
+                        id="repeatButton"
+                        aria-label="Repeat"
+                        title="Repeat"
+                    >
+                        <i class="fa-solid fa-repeat"></i>
+                    </button>
+                </div>
+
+                <div class="volume-section">
+                    <i class="fa-solid fa-volume-low"></i>
+                    <input
+                        type="range"
+                        id="volumeBar"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.7"
+                        aria-label="Volume"
+                    >
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+
+                <audio id="audioPlayer" preload="metadata"></audio>
+
+                <p id="statusMessage" class="status-message" aria-live="polite">
+                    Select a song to get started.
+                </p>
+            </div>
+
+            <aside class="playlist-card">
+                <div class="playlist-heading">
+                    <div>
+                        <span class="eyebrow">YOUR COLLECTION</span>
+                        <h2>Playlist</h2>
+                    </div>
+
+                    <span class="track-count" id="trackCount">03 TRACKS</span>
+                </div>
+
+                <div class="playlist" id="playlist">
+                    <!-- Playlist tracks are generated by JavaScript. -->
+                </div>
+
+                <div class="playlist-footer">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>Your music, your moment.</span>
+                </div>
+            </aside>
+        </section>
+
+        <footer class="footer">
+            <p>Alamzy Music Player &copy; <span id="year"></span></p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
