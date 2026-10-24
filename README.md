@@ -67,7 +67,7 @@ Follow these steps to run the project locally.
    Replace the example repository URL with your actual GitHub repository URL.
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/CodeAlpha_MusicPlayer.git
+   git clone https://github.com/emmadave1/CodeAlpha_MusicPlayer.git
    ```
 
 2. Navigate to the project directory.
