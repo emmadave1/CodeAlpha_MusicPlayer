@@ -64,8 +64,6 @@ Follow these steps to run the project locally.
 
 1. Clone the repository.
 
-   Replace the example repository URL with your actual GitHub repository URL.
-
    ```bash
    git clone https://github.com/emmadave1/CodeAlpha_MusicPlayer.git
    ```
